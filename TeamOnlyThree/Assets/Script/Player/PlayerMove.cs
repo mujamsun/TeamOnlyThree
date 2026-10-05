@@ -3,15 +3,18 @@ using UnityEngine.InputSystem;
 
 namespace KIM
 {
+    
+    
+
     public class PlayerMove : MonoBehaviour
     {
-        [Header("ÀÌµ¿¼Óµµ ¼³Á¤")]
 
+        [Header("ì´ë™ì†ë„ ì„¤ì •")]
         public float speed = 5f;
 
         void Update()
         {
-            // Å°º¸µå°¡ ¿¬°áµÇ¾î ÀÖÁö ¾ÊÀ» ¶§ ¹ß»ıÇÏ´Â ¿¡·¯ ¹æÁö
+            // í‚¤ë³´ë“œê°€ ì—°ê²°ë˜ì–´ ìˆì§€ ì•Šì„ ë•Œ ë°œìƒí•˜ëŠ” ì—ëŸ¬ ë°©ì§€
             if (Keyboard.current == null) return;
 
 
@@ -20,25 +23,26 @@ namespace KIM
 
             Vector2 moveDelta = Vector2.zero;
 
-            // [W] Å°
+
+            // [W] í‚¤
             if (Keyboard.current.wKey.isPressed)
             {
                 moveDelta.y += deltaM;
             }
 
-            // [S] Å°
+            // [S] í‚¤
             if (Keyboard.current.sKey.isPressed)
             {
                 moveDelta.y -= deltaM;
             }
 
-            // [A] Å°
+            // [A] í‚¤
             if (Keyboard.current.aKey.isPressed)
             {
                 moveDelta.x -= deltaM;
             }
 
-            // [D] Å°
+            // [D] í‚¤
             if (Keyboard.current.dKey.isPressed)
             {
                 moveDelta.x += deltaM;
