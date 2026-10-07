@@ -11,6 +11,8 @@ public class PlayerMoveArea : MonoBehaviour
     void Update()
     {
         playerpos = transform.position;
+        playerpos.x = clamp(playerpos, minX, maxX);
+        playerpos.y = clamp(playerpos, minY, maxY);
         if (maxX < playerpos.x)
         {
             playerpos.x = maxX; 
