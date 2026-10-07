@@ -3,12 +3,8 @@ using UnityEngine.InputSystem;
 
 namespace KIM
 {
-    
-    
-
     public class PlayerMove : MonoBehaviour
     {
-
         [Header("이동속도 설정")]
         public float speed = 5f;
 
@@ -18,35 +14,37 @@ namespace KIM
             if (Keyboard.current == null) return;
 
 
-            float deltaM = speed * Time.deltaTime;
+            Vector2 inputDir = Vector2.zero;
 
-
-            Vector2 moveDelta = Vector2.zero;
-
-
-            // [W] 키
-            if (Keyboard.current.wKey.isPressed)
+            // [W] 키 또는 [위쪽 화살표] 키
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
             {
-                moveDelta.y += deltaM;
+                inputDir.y += 1f;
             }
 
-            // [S] 키
-            if (Keyboard.current.sKey.isPressed)
+            // [S] 키 또는 [아래쪽 화살표] 키
+            if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
             {
-                moveDelta.y -= deltaM;
+                inputDir.y -= 1f;
             }
 
-            // [A] 키
-            if (Keyboard.current.aKey.isPressed)
+            // [A] 키 또는 [왼쪽 화살표] 키
+            if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
             {
-                moveDelta.x -= deltaM;
+                inputDir.x -= 1f;
             }
 
-            // [D] 키
-            if (Keyboard.current.dKey.isPressed)
+            // [D] 키 또는 [오른쪽 화살표] 키
+            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
             {
-                moveDelta.x += deltaM;
+                inputDir.x += 1f;
             }
+
+
+            Vector2 moveDir = inputDir.normalized;
+
+
+            Vector2 moveDelta = moveDir * (speed * Time.deltaTime);
 
 
             transform.Translate(moveDelta);

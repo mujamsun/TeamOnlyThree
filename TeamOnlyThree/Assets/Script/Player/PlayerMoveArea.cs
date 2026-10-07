@@ -1,42 +1,19 @@
-using KIM;
 using UnityEngine;
 
-namespace JTS
+namespace SSW
 {
     public class PlayerMoveArea : MonoBehaviour
     {
-        public float minX = -11f;
-        public float maxX = 11f;
-        public float minY = -5f;
-        public float maxY = 5f;
-        public Vector2 playerpos;
+        public Vector2 min = new Vector2(-11f, -5f);
+        public Vector2 max = new Vector2(11f, 5f);
+        public Vector2 playerpos = Vector2.zero;
 
-        void Update()
+        void LateUpdate()
         {
             playerpos = transform.position;
-            if (maxX < playerpos.x)
-            {
-                GetComponent<PlayerMove>().speed = 0f;
-                return;
-            }
-
-            if (minX > playerpos.x)
-            {
-                GetComponent<PlayerMove>().speed = 0f;
-                return;
-            }
-
-            if (maxY < playerpos.y)
-            {
-                GetComponent<PlayerMove>().speed = 0f;
-                return;
-            }
-
-            if (minY > playerpos.y)
-            {
-                GetComponent<PlayerMove>().speed = 0f;
-                return;
-            }
+            playerpos.x = Mathf.Clamp(playerpos.x, min.x, max.x);
+            playerpos.y = Mathf.Clamp(playerpos.y, min.y, max.y);
+            transform.position = playerpos;
         }
     }
 }

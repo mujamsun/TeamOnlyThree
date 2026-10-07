@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 1158108863}
   - component: {fileID: 1158108862}
   - component: {fileID: 1158108865}
+  - component: {fileID: 1158108866}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -371,7 +372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91111263276e93642b3913c254fa7e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playermove
-  speed: 5
 --- !u!212 &1158108863
 SpriteRenderer:
   serializedVersion: 2
@@ -458,6 +458,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2392b7f026ba6e49930c4f620224680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KIM.PlayerMove
+  speed: 5
+--- !u!114 &1158108866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158108861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68853e606889954bafea56a489128ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveArea
+  minX: -11
+  maxX: 11
+  minY: -5
+  maxY: 5
+  playerpos: {x: 0, y: 0}
 --- !u!1 &1677783981
 GameObject:
   m_ObjectHideFlags: 0
