@@ -471,10 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68853e606889954bafea56a489128ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveArea
-  minX: -11
-  maxX: 11
-  minY: -5
-  maxY: 5
+  min: {x: -10.35, y: -4.5}
+  max: {x: 10.35, y: 4.5}
   playerpos: {x: 0, y: 0}
 --- !u!1 &1677783981
 GameObject:

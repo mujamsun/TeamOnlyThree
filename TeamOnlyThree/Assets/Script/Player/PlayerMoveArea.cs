@@ -4,8 +4,8 @@ namespace SSW
 {
     public class PlayerMoveArea : MonoBehaviour
     {
-        public Vector2 min = new Vector2(-11f, -5f);
-        public Vector2 max = new Vector2(11f, 5f);
+        public Vector2 min = new Vector2(-10.35f, -4.5f);
+        public Vector2 max = new Vector2(10.35f, 4.5f);
         public Vector2 playerpos = Vector2.zero;
 
         void LateUpdate()
