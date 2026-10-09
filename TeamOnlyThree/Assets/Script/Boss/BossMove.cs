@@ -4,9 +4,10 @@ namespace JTS
 {
     public class BossMove : MonoBehaviour
     {
-        public int BossMove() {
-            
-            
+        public void BossMovemont()
+        { 
+        
         }
     }  
+
 }
